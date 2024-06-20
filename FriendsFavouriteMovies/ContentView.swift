@@ -10,7 +10,7 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var movies: [Movie]
+    @Query(sort: \Movie.title) private var movies: [Movie]
 
     var body: some View {
         NavigationSplitView {
@@ -60,5 +60,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Movie.self, inMemory: true)
+        .modelContainer(SampleData.shared.modelContainer)
 }
