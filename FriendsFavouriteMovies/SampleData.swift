@@ -18,6 +18,10 @@ class SampleData {
         modelContainer.mainContext
     }
     
+    var movie: Movie {
+        Movie.sampleData[0]
+    }
+    
     private init() {
         let schema = Schema([
             Movie.self,

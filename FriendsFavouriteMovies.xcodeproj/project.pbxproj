@@ -13,6 +13,7 @@
 		3A2722762C1C52B2008C135E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A2722752C1C52B2008C135E /* Assets.xcassets */; };
 		3A2722792C1C52B2008C135E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A2722782C1C52B2008C135E /* Preview Assets.xcassets */; };
 		3A61B37E2C242EAB00E53C0D /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A61B37D2C242EAB00E53C0D /* SampleData.swift */; };
+		3A61B3802C24366300E53C0D /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A61B37F2C24366300E53C0D /* MovieDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		3A2722752C1C52B2008C135E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A2722782C1C52B2008C135E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3A61B37D2C242EAB00E53C0D /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		3A61B37F2C24366300E53C0D /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				3A27226F2C1C52B1008C135E /* FriendsFavouriteMoviesApp.swift */,
 				3A2722712C1C52B1008C135E /* ContentView.swift */,
 				3A61B37D2C242EAB00E53C0D /* SampleData.swift */,
+				3A61B37F2C24366300E53C0D /* MovieDetail.swift */,
 				3A2722732C1C52B1008C135E /* Movie.swift */,
 				3A2722752C1C52B2008C135E /* Assets.xcassets */,
 				3A2722772C1C52B2008C135E /* Preview Content */,
@@ -145,6 +148,7 @@
 			files = (
 				3A2722722C1C52B1008C135E /* ContentView.swift in Sources */,
 				3A2722742C1C52B1008C135E /* Movie.swift in Sources */,
+				3A61B3802C24366300E53C0D /* MovieDetail.swift in Sources */,
 				3A2722702C1C52B1008C135E /* FriendsFavouriteMoviesApp.swift in Sources */,
 				3A61B37E2C242EAB00E53C0D /* SampleData.swift in Sources */,
 			);
