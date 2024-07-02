@@ -38,7 +38,9 @@ struct ContentView: View {
                 }
             }
             .sheet(item: $newMovie) { movie in
-                MovieDetail(movie: movie)
+                NavigationStack {
+                    MovieDetail(movie: movie)
+                }
             }
         } detail: {
             Text("Select a movie")
