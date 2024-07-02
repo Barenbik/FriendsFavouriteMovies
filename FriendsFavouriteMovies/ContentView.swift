@@ -11,6 +11,8 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \Movie.title) private var movies: [Movie]
+    
+    @State private var newMovie: Movie?
 
     var body: some View {
         NavigationSplitView {
@@ -35,6 +37,9 @@ struct ContentView: View {
                     }
                 }
             }
+            .sheet(item: $newMovie) { movie in
+                MovieDetail(movie: movie)
+            }
         } detail: {
             Text("Select a movie")
                 .navigationTitle("Movie")
@@ -43,8 +48,9 @@ struct ContentView: View {
 
     private func addMovie() {
         withAnimation {
-            let newItem = Movie(title: "New Movie", releaseDate: .now)
+            let newItem = Movie(title: "", releaseDate: .now)
             modelContext.insert(newItem)
+            newMovie = newItem
         }
     }
 
