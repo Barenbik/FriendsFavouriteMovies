@@ -16,15 +16,23 @@ struct ContentView: View {
 
     var body: some View {
         NavigationSplitView {
-            List {
-                ForEach(movies) { movie in
-                    NavigationLink {
-                        MovieDetail(movie: movie)
-                    } label: {
-                        Text(movie.title)
+            Group {
+                if !movies.isEmpty {
+                    List {
+                        ForEach(movies) { movie in
+                            NavigationLink {
+                                MovieDetail(movie: movie)
+                            } label: {
+                                Text(movie.title)
+                            }
+                        }
+                        .onDelete(perform: deleteItems)
+                    }
+                } else {
+                    ContentUnavailableView {
+                        Label("No Movies", systemImage: "film.stack")
                     }
                 }
-                .onDelete(perform: deleteItems)
             }
             .navigationTitle("Movies")
             .toolbar {
@@ -69,4 +77,9 @@ struct ContentView: View {
 #Preview {
     ContentView()
         .modelContainer(SampleData.shared.modelContainer)
+}
+
+#Preview("Empty List") {
+    ContentView()
+        .modelContainer(for: Movie.self, inMemory: true)
 }
