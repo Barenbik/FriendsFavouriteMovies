@@ -47,6 +47,7 @@ struct FriendDetail: View {
     NavigationStack {
         FriendDetail(friend: SampleData.shared.friend)
     }
+    .modelContainer(SampleData.shared.modelContainer)
 }
 
 #Preview("New Friend") {
@@ -54,4 +55,5 @@ struct FriendDetail: View {
         FriendDetail(friend: SampleData.shared.friend, isNew: true)
             .navigationBarTitleDisplayMode(.inline)
     }
+    .modelContainer(SampleData.shared.modelContainer)
 }

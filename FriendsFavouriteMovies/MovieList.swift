@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MovieList.swift
 //  FriendsFavouriteMovies
 //
 //  Created by Tony Sharples on 14/06/2024.
