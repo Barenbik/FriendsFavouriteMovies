@@ -11,9 +11,12 @@ import SwiftData
 @main
 struct FriendsFavouriteMoviesApp: App {
     var sharedModelContainer: ModelContainer = {
+        // This schema adds the included models to the data store of the app.
         let schema = Schema([
             Movie.self,
+            Friend.self
         ])
+        
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
         do {
