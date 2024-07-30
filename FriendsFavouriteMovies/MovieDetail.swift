@@ -19,10 +19,25 @@ struct MovieDetail: View {
         self.isNew = isNew
     }
     
+    var sortedFriends: [Friend] {
+        // The trailing closure compares the first item to the second item and returns true or false depending on if first name is before second name alphabetically.
+        movie.favouritedBy.sorted { first, second in
+            first.name < second.name
+        }
+    }
+    
     var body: some View {
         Form {
             TextField("Movie title", text: $movie.title)
             DatePicker("Release Date", selection: $movie.releaseDate, displayedComponents: .date)
+            
+            if !movie.favouritedBy.isEmpty {
+                Section("Favourited by") {
+                    ForEach(sortedFriends) { friend in
+                        Text(friend.name)
+                    }
+                }
+            }
         }
         .navigationTitle(isNew ? "New Movie" : "Movie")
         .toolbar {

@@ -52,6 +52,11 @@ class SampleData {
             context.insert(friend)
         }
         
+        Friend.sampleData[0].favouriteMovie = Movie.sampleData[1]
+        Friend.sampleData[2].favouriteMovie = Movie.sampleData[0]
+        Friend.sampleData[3].favouriteMovie = Movie.sampleData[4]
+        Friend.sampleData[4].favouriteMovie = Movie.sampleData[0]
+        
         do {
             try context.save()
         } catch {
