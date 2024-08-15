@@ -15,46 +15,41 @@ struct FriendList: View {
     @State private var newFriend: Friend?
     
     var body: some View {
-        NavigationSplitView {
-            Group {
-                if !friends.isEmpty {
-                    List {
-                        ForEach(friends) { friend in
-                            NavigationLink {
-                                FriendDetail(friend: friend)
-                            } label: {
-                                Text(friend.name)
-                            }
+        Group {
+            if !friends.isEmpty {
+                List {
+                    ForEach(friends) { friend in
+                        NavigationLink {
+                            FriendDetail(friend: friend)
+                        } label: {
+                            Text(friend.name)
                         }
-                        .onDelete(perform: deleteFriends)
                     }
-                } else {
-                    ContentUnavailableView {
-                        Label("No Friends", systemImage: "person.and.person")
-                    }
+                    .onDelete(perform: deleteFriends)
+                }
+            } else {
+                ContentUnavailableView {
+                    Label("No Friends", systemImage: "person.and.person")
                 }
             }
-            .navigationTitle("Friends")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                
-                ToolbarItem {
-                    Button(action: addFriend) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+        }
+        .navigationTitle("Friends")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                EditButton()
+            }
+            
+            ToolbarItem {
+                Button(action: addFriend) {
+                    Label("Add Item", systemImage: "plus")
                 }
             }
-            .sheet(item: $newFriend) { friend in
-                NavigationStack {
-                    FriendDetail(friend: friend, isNew: true)
-                }
-                .interactiveDismissDisabled()
+        }
+        .sheet(item: $newFriend) { friend in
+            NavigationStack {
+                FriendDetail(friend: friend, isNew: true)
             }
-        } detail: {
-            Text("Select a friend")
-                .navigationTitle("Friend")
+            .interactiveDismissDisabled()
         }
     }
     

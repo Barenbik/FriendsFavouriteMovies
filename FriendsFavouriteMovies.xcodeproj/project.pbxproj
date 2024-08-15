@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A06F9582C5B891B00A3F0B8 /* FilteredMovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06F9572C5B891B00A3F0B8 /* FilteredMovieList.swift */; };
+		3A1CBD262C6E319B001781E8 /* FilteredFriendList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1CBD252C6E319B001781E8 /* FilteredFriendList.swift */; };
 		3A2722702C1C52B1008C135E /* FriendsFavouriteMoviesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A27226F2C1C52B1008C135E /* FriendsFavouriteMoviesApp.swift */; };
 		3A2722722C1C52B1008C135E /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2722712C1C52B1008C135E /* MovieList.swift */; };
 		3A2722742C1C52B1008C135E /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2722732C1C52B1008C135E /* Movie.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		3A06F9572C5B891B00A3F0B8 /* FilteredMovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredMovieList.swift; sourceTree = "<group>"; };
+		3A1CBD252C6E319B001781E8 /* FilteredFriendList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredFriendList.swift; sourceTree = "<group>"; };
 		3A27226C2C1C52B1008C135E /* FriendsFavouriteMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendsFavouriteMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A27226F2C1C52B1008C135E /* FriendsFavouriteMoviesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsFavouriteMoviesApp.swift; sourceTree = "<group>"; };
 		3A2722712C1C52B1008C135E /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				3A2722772C1C52B2008C135E /* Preview Content */,
 				3A873DA72C37FDC50073BFFE /* ContentView.swift */,
 				3A06F9572C5B891B00A3F0B8 /* FilteredMovieList.swift */,
+				3A1CBD252C6E319B001781E8 /* FilteredFriendList.swift */,
 			);
 			path = FriendsFavouriteMovies;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				3A873DA22C37EB3B0073BFFE /* Friend.swift in Sources */,
 				3A06F9582C5B891B00A3F0B8 /* FilteredMovieList.swift in Sources */,
 				3A2722702C1C52B1008C135E /* FriendsFavouriteMoviesApp.swift in Sources */,
+				3A1CBD262C6E319B001781E8 /* FilteredFriendList.swift in Sources */,
 				3A61B37E2C242EAB00E53C0D /* SampleData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
