@@ -13,13 +13,17 @@ struct MovieList: View {
     @Query private var movies: [Movie]
     @State private var newMovie: Movie?
     
-    init(titleFilter: String = "") {
+    init(titleFilter: String = "", sortByRelease: Bool = false) {
         let predicate = #Predicate<Movie> { movie in
             titleFilter.isEmpty || movie.title.localizedStandardContains(titleFilter)
         }
         
-        // _movies is created behind the scenes. We need to access it directly if we want to create a custom query.
-        _movies = Query(filter: predicate, sort: \Movie.title)
+        if sortByRelease {
+            _movies = Query(filter: predicate, sort: \Movie.releaseDate)
+        } else {
+            // _movies is created behind the scenes. We need to access it directly if we want to create a custom query.
+            _movies = Query(filter: predicate, sort: \Movie.title)
+        }
     }
     
     var body: some View {

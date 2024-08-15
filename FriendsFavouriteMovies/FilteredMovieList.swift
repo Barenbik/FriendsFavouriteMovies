@@ -9,11 +9,18 @@ import SwiftUI
 
 struct FilteredMovieList: View {
     @State private var searchText = ""
+    @State private var sortByRelease = false
     
     var body: some View {
         NavigationSplitView {
-            MovieList(titleFilter: searchText)
+            MovieList(titleFilter: searchText, sortByRelease: sortByRelease)
                 .searchable(text: $searchText)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Toggle("Sort by release date", isOn: $sortByRelease)
+                            .toggleStyle(.switch)
+                    }
+                }
         } detail: {
             Text("Select a movie")
                 .navigationTitle("Movie")
