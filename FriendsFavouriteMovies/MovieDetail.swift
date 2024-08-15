@@ -33,8 +33,11 @@ struct MovieDetail: View {
             
             if !movie.favouritedBy.isEmpty {
                 Section("Favourited by") {
-                    ForEach(sortedFriends) { friend in
-                        Text(friend.name)
+                    List {
+                        ForEach(sortedFriends) { friend in
+                            Text(friend.name)
+                        }
+                        .onDelete(perform: deleteFavouriteMovieForFriend)
                     }
                 }
             }
@@ -54,6 +57,14 @@ struct MovieDetail: View {
                         dismiss()
                     }
                 }
+            }
+        }
+    }
+    
+    private func deleteFavouriteMovieForFriend(offset: IndexSet) {
+        withAnimation {
+            for index in offset {
+                sortedFriends[index].favouriteMovie = nil
             }
         }
     }

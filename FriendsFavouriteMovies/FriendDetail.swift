@@ -36,6 +36,7 @@ struct FriendDetail: View {
                         .tag(movie as Movie?)
                 }
             }
+            .pickerStyle(.automatic)
         }
         .navigationTitle("Friend")
         .toolbar {
