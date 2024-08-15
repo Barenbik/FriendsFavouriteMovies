@@ -5,10 +5,6 @@
 //  Created by Tony Sharples on 15/08/2024.
 //
 
-// 2. Add filter query to the friends variable
-// 3. Create a new FriendList each time a letter is typed
-// 4. Bind the search field to the friends field
-
 import SwiftUI
 
 struct FilteredFriendList: View {
@@ -16,7 +12,7 @@ struct FilteredFriendList: View {
     
     var body: some View {
         NavigationSplitView {
-            FriendList()
+            FriendList(nameFilter: searchText)
                 .searchable(text: $searchText)
         } detail: {
             Text("Select a friend")

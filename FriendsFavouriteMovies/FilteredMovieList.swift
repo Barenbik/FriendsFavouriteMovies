@@ -3,7 +3,7 @@
 //  FriendsFavouriteMovies
 //
 //  Created by Tony Sharples on 01/08/2024.
-//$
+//
 
 import SwiftUI
 

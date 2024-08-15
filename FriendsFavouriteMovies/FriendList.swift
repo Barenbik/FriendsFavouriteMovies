@@ -10,9 +10,16 @@ import SwiftData
 
 struct FriendList: View {
     @Environment(\.modelContext) private var modelContext
-    @Query(sort: \Friend.name) private var friends: [Friend]
-    
+    @Query private var friends: [Friend]
     @State private var newFriend: Friend?
+    
+    init(nameFilter: String = "") {
+        let predicate = #Predicate<Friend> { friend in
+            nameFilter.isEmpty || friend.name.localizedStandardContains(nameFilter)
+        }
+        
+        _friends = Query(filter: predicate, sort: \Friend.name)
+    }
     
     var body: some View {
         Group {
@@ -73,4 +80,18 @@ struct FriendList: View {
 #Preview {
     FriendList()
         .modelContainer(SampleData.shared.modelContainer)
+}
+
+#Preview("Empty List") {
+    NavigationStack {
+        FriendList()
+            .modelContainer(for: Friend.self, inMemory: true)
+    }
+}
+
+#Preview("Filtered") {
+    NavigationStack {
+        FriendList(nameFilter: "to")
+            .modelContainer(SampleData.shared.modelContainer)
+    }
 }
